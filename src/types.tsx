@@ -1,6 +1,6 @@
 export type PlanetsType = {
   name: string,
-  rotation_period: number,
+  rotation_period: string,
   orbital_period: string,
   diameter: string,
   climate: string,
