@@ -1,13 +1,13 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Table from './components/Table';
+import Table from './components/Table/Table';
+import Header from './components/Header/Header';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={ <Table /> } />
-    </Routes>
+    <div>
+      <Header />
+      <Table />
+    </div>
   );
 }
 

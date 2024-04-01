@@ -1,34 +1,24 @@
-// 1.Tipagem
-// 2.O provider funcional
-// 3.Exportar
-// 4.Adicionar na main
-
-import React, { useEffect } from 'react';
+import { useState } from 'react';
 import StarWarsContext from './StarWarsContext';
+import useFetch from '../hooks/useFetch';
+import useFilter from '../hooks/useFilters';
+import { StarWarsProviderProps } from '../types';
+import { fetchApiStarWars } from '../services/api';
 
-type StarWarsProviderProps = {
-  children: React.ReactNode;
-};
+function StarWarsProvider({ children }: React.PropsWithChildren) {
+  // const { data, loading, error } = useFetch(fetchApiStarWars);
+  // const [listPlanets, setListPlanets] = useState<PlanetsType[]>([]);
 
-const apiStarWars = 'https://swapi.dev/api/planets';
+  const planets = useFetch(fetchApiStarWars);
+  const filters = useFilter();
 
-function StarWarsProvider({ children }: StarWarsProviderProps) {
-  const [data, setData] = React.useState([]);
-
-  useEffect(() => {
-    fetch(apiStarWars)
-      .then((result) => result.json())
-      .then((response) => setData(response.results));
-  }, []);
-
-  const context = {
-    data,
+  const contextValue = {
+    planets,
+    filters,
   };
 
-  console.log(context);
-
   return (
-    <StarWarsContext.Provider value={ context }>
+    <StarWarsContext.Provider value={ contextValue }>
       {children}
     </StarWarsContext.Provider>
   );

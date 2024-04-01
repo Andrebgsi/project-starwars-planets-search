@@ -1,9 +1,6 @@
 import { createContext } from 'react';
-import { PlanetsType } from '../types';
+import { StarWarsContextType } from '../types';
 
-type StarWarsContextType = {
-  data: PlanetsType[];
-};
 const StarWarsContext = createContext(
   {} as StarWarsContextType,
 );

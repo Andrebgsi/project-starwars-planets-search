@@ -1,0 +1,79 @@
+.boxTable {
+  align-items: center;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  position: sticky;
+  width: 100%;
+}
+
+.boxFilter {
+  align-items: center;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  overflow: hidden;
+  padding: 30px;
+  width: 100%;
+}
+
+.nameFilter {
+  background-color: transparent;
+  border: 1px solid gold;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 5px;
+  text-align: center;
+  width: 400px;
+}
+
+table {
+  background-color: #1e1e1e;
+  border-collapse: collapse;
+  padding: 10px;
+  width: 100%;
+}
+
+th {
+  background-color: black;
+  border: 1px solid #333;
+  color: white;
+  font-size: 0.8em;
+  font-weight: 700;
+  height: 60px;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+td {
+  border: 1px solid #333;
+  max-width: 300px;
+  padding: 0.5em 1em;
+  word-wrap: break-word;
+}
+
+tr:nth-child( odd ) {
+  background-color: #1c1c1c;
+}
+
+tr:nth-child( even ) {
+  background-color: #181818;
+}
+
+tr:hover {
+  background-color: #333;
+}
+
+tr:hover td {
+  color: white;
+}
